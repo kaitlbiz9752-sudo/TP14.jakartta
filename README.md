@@ -58,15 +58,14 @@ Créer un fichier `Dockerfile` à la racine :
 
 ## 5. Exécuter Docker Compose
 
-    docker-compose up -d
+
 
 
 
     <img width="1369" height="241" alt="image" src="https://github.com/user-attachments/assets/342104f5-94e9-44f9-9a8d-da6f4a3e0fb4" />
 
 
-------------------------------------------------------------------------
 
-## Auteur
 
-TP réalisé étape par étape.
+
+
