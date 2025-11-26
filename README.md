@@ -47,63 +47,23 @@ Créer un fichier `Dockerfile` à la racine :
 
     docker images
 
-### Exécuter le conteneur
 
-    docker run -d -p 8080:8080 --name spring-app ens/springdocker:1.0
 
-### Vérifier
 
--   Navigateur : http://localhost:8080/hello
--   Logs :
-
-```{=html}
-<!-- -->
-```
-    docker logs -f spring-app
-
-### Arrêter & supprimer
-
-    docker stop spring-app
-    docker rm spring-app
 
 ------------------------------------------------------------------------
 
-## 4. Docker Compose (Bonus)
-
-Créer `docker-compose.yml` :
-
-    version: '3.8'
-
-    services:
-      mysql-db:
-        image: mysql:8
-        environment:
-          MYSQL_ROOT_PASSWORD: 1234
-          MYSQL_DATABASE: demo_db
-        ports:
-          - "3306:3306"
-        volumes:
-          - mysql_data:/var/lib/mysql
-
-      spring-app:
-        image: ens/springdocker:1.0
-        depends_on:
-          - mysql-db
-        ports:
-          - "8080:8080"
-        environment:
-          SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/demo_db?createDatabaseIfNotExist=true
-          SPRING_DATASOURCE_USERNAME: root
-          SPRING_DATASOURCE_PASSWORD: 1234
-
-    volumes:
-      mysql_data:
 
 ------------------------------------------------------------------------
 
 ## 5. Exécuter Docker Compose
 
     docker-compose up -d
+
+
+
+    <img width="1369" height="241" alt="image" src="https://github.com/user-attachments/assets/342104f5-94e9-44f9-9a8d-da6f4a3e0fb4" />
+
 
 ------------------------------------------------------------------------
 
